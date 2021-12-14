@@ -1,0 +1,17 @@
+{
+  "GAP": 12,
+  "MAX_WIDTH": 1920,
+  "MEDIA": {
+    "phone": 768,
+    "tablet": 1024,
+    "laptop": 1240,
+    "desktop": 1920
+  },
+  "RESPONSIVE_GAP": {
+    "phone": {"x": 0, "y": 0},
+    "tablet": {"x": 0, "y": 0},
+    "laptop": {"x": 40, "y": 40},
+    "desktop": {"x": 40, "y": 40},
+    "default": {"x": 40, "y": 40}
+  }
+}

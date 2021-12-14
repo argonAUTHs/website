@@ -1,0 +1,116 @@
+---
+  permalink: css/menu.css
+---
+
+.logo img {
+  display: block;
+  width: 100%;
+  max-width: 275px;
+  height: auto;
+}
+
+@media(max-width: 767px) {
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+@supports (display: flex) {
+  .header__container {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}
+
+@media(max-width: <%= menu.breakpoint - 1 %>px) {
+  .header__main-menu-container {
+    display: none;
+  }
+
+  .header__main-menu-container--opened {
+    display: block;
+    position: fixed;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+  }
+
+  @supports (display: flex) {
+    .header__main-menu-container--opened {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@supports (display: flex) {
+  .header__main-menu-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.burger__button {
+  display: none;
+}
+
+@media(max-width: <%= menu.breakpoint - 1 %>px) {
+  .burger__button {
+    display: block;
+  }
+}
+
+.story .header__main-menu-container {
+  padding: 100px 32px 32px 32px;
+}
+
+@media(max-width: <%= menu.breakpoint - 1 %>px) {
+  .story .header__main-menu-container {
+    padding: <%= responsive.GAP %>px;
+  }
+}
+
+@media(max-width: <%= menu.breakpoint - 1 %>px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: <%= colors['Surface 2'].color %>;
+    backdrop-filter: blur(36px);
+  }
+
+  .story .header {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+
+  .story .burger__button {
+    background-color: <%= colors['Surface 2'].color %>;
+    backdrop-filter: blur(36px);
+    border-radius: 6px;
+  }
+}
+
+@media(min-width: <%= menu.breakpoint %>px) {
+  .main-menu {
+    position: fixed;
+    top: 250px;
+    background-color: <%= colors['Surface 2'].color %>;
+    backdrop-filter: blur(36px);
+    padding: <%= responsive.GAP %>px 0; 
+    border-radius: <%= responsive.GAP/2 %>px;
+  }
+}

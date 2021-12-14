@@ -1,0 +1,40 @@
+{
+  "Primary" : {
+    "300": {
+      "color" : "#87bbc5",
+      "label" : "#000000"
+    },
+    "500": {
+      "color" : "#6aaab7",
+      "label" : "#000000"
+    },
+    "700": {
+      "color" : "#4a7680",
+      "label" : "#000000"
+    }
+  },
+  "Background" : {
+    "color" : "#000000",
+    "label" : "#FFFFFF"
+  },
+  "Surface" : {
+    "color" : "#000000",
+    "label" : "#FFFFFF"
+  },
+  "Surface 2" : {
+    "color" : "rgba(0, 0, 0, 0.4)",
+    "label" : "#FFFFFF"
+  },
+  "On Background" : {
+    "color" : "#ffffff",
+    "label" : "#000000"
+  },
+  "On Surface" : {
+    "color" : "#FFFFFF",
+    "label" : "#000000"
+  },
+  "Border" : {
+    "color" : "#E8E9EB",
+    "label" : "#000000"
+  }
+}

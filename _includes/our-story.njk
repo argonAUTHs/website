@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.name }}</title>
+  <link rel="stylesheet" href="/css/container.css">
+  <link rel="stylesheet" href="/css/responsive-blocks.css">
+  <link rel="stylesheet" href="/css/responsive-buffer.css">
+  <link rel="stylesheet" href="/css/utils.css">
+  <link rel="stylesheet" href="/css/buffer.css">
+  <link rel="stylesheet" href="/css/spacers.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/ui-kit.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  {% include "partials/fonts.njk" %}
+
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+
+      if(html) {
+        html.className +=html.className ? " js" : "js";
+      }
+
+      if (typeof SSVGRect !== "undefined") {
+        html.className +=html.className ? " svg" : "svg";
+        window.svg = true;
+      }
+    })();
+  </script>
+</head>
+<body class="story">
+    <div class="header">
+      <div class="header__spacer-top"></div>
+      {% container responsive, container %}
+        <header>
+          <div class="header__container responsive-blocks-container">
+            {% column_100_100_25_25_25 %}
+              {% buffer %}
+                <div class="logo">
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="/img/logo-mobile.png">
+                    <img
+                      src="/img/logo.png" width="330" height="88" alt="{{ site.name }}">
+                  </picture>
+                </div>
+              {% endBuffer %}
+            {% endColumn %}
+            <div class="header__main-menu-burger">
+            </div>
+        </header>
+      {% endContainer %}
+    </div>
+    <div class="bg-container">
+        <main>
+          {% container responsive %}
+          <div class="responsive-blocks-container">
+            {% column_100_100_25_25_25 %}
+            {% endColumn %}
+            {% column_100_100_75_75_75 %}
+                <div class="story__bg">
+                </div>
+            {% endColumn %}
+          </div>
+          {% endContainer %}
+          {% container responsive %}
+            <div class="responsive-blocks-container">
+              {% column_100_100_25_25_25 %}
+                <div class="header__main-menu-container" id="main-menu-container">
+                  {% include 'partials/menu.njk' %}
+                </div>
+              {% endColumn %}
+              {% column_100_100_75_75_75 %}
+                <div class="responsive-blocks-container">
+                  {% column_5_10_100_100_100 %}
+                  {% endColumn %}
+
+                  {% column_90_90_85_85_85 %}
+                    <div class="story__spacer-top"></div>
+                    <h1 class="big-title"><strong>Our story</strong></h1>
+                    <div class="story__content-spacer-1"></div>
+                    <div class="buffer">
+                      <a href="/" class="back-link">Back</a>
+                    </div>
+                    <div class="story__content-spacer-2"></div>
+                    <h2 class="title-story-m">Why Open Software?</h2>
+                    <p class="p-small">
+                      Our industry, literally one of the very few, has chosen very different approach in terms of licensing IPR. Due to the very liberal approach and open human minds, new licenses emerged and new model was established. That allowed to create communities adn spread ideas more quickly, than ever before in the history. We second to that movement ideas since the very first day we started our professional careers as this is the essence of growth and evolution. It has the impact on the whole mankind and we want to be part of it.
+                    </p>
+                    <div class="story__content-spacer"></div>
+                    <ol class="list-reset timeline">
+                      <li>
+                        <p class="time strong">
+                          <time>2010</time>
+                        </p>
+                        <div class="spacer-24"></div>
+                        <p class="p-small">
+                          Back in the 2010 two brave individuals wanted to have an impact of how the Information
+                          Technologies are applied and used by Education Sector on a daily basis. We wanted to intro-
+                          duce flexible tools, leveraging still pretty new - at that time - movement of lean technologies
+                          like Ruby on Rails or jQuery, with the aim of simplicity over complexity and user-centric con-
+                          cepts.
+                        </p>
+                        <div class="story__list-spacer"></div>
+                      </li>
+
+                      <li>
+                        <p class="time strong">
+                          <time>2011</time>
+                        </p>
+                        <div class="spacer-24"></div>
+                        <p class="p-small">
+                          In the mid of 2011 we started a company to facilitate the grow of our concept. We have built
+                          a prototype of our first system by then. Its main goal was to serve the education offer in a
+                          pleasant way whilst allowing the Course instructors for managing the Sylabus contents in an
+                          extended, yet straightforward way.
+                        </p>
+                        <div class="story__list-spacer"></div>
+                      </li>
+                      <li>
+                        <p class="time strong">
+                          <time>2019</time>
+                        </p>
+                        <div class="spacer-24"></div>
+                        <p class="p-small">
+                          It is year 2019 and we start to realize that all the efforts we have made to spread our idea
+                          were not sufficient. We need to make a decision and we choose to involve in a completely dif-
+                          ferent sector that just emerges – the digital identity movement. It is not only founded upon
+                          the same principles we believe, but it is also directly related to all of us and what we do in the
+                          digital space through interactions. It is the essence of our beliefs, hence here we are.
+                        </p>
+                        <div class="story__list-spacer"></div>
+                      </li>
+                      <li class="timeline-item-exception">
+                        <div class="responsive-blocks-container nowrap">
+                          <p class="time strong float-left">
+                            <time>2021</time>                    
+                          </p>
+                          <div class="float-left timeline-exception">
+                            <p class="p-big">
+                              Let's create the future with us!
+                            </p>
+
+                            <div class="buffer">
+                              <a href="#" class="arrow-link arrow-link-small responsive-blocks-container">
+                                <span class="float-left"><strong>Contact us</strong></span> 
+                                <span aria-hidden="true" role="presentation" class="float-left">
+                                  {% pictureSvgPng "img/arrow-link-small.svg", "", "120", "24" %}
+                                </span>
+                                
+                              </a>
+                              <a href="#" class="arrow-link arrow-link-small responsive-blocks-container">
+                                <span class="float-left"><strong>Check out last jobs offer</strong></span> 
+                                <span aria-hidden="true" role="presentation" class="float-left">
+                                  {% pictureSvgPng "img/arrow-link-small.svg", "", "120", "24" %}
+                                </span>
+                              </a>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        
+                        <div class="story__list-spacer"></div>
+                      </li>
+                    </ol>
+                    
+                    <div class="responsive-blocks-container">
+                      <div class="buffer story-arrows">
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="story__spacer-bottom"></div>
+                  {% endColumn %}
+
+                  {% column_5_100_15_15_15 %}
+                  {% endColumn %}
+                </div>
+              {% endColumn %}
+            </div>
+          {% endContainer %}
+        </main>
+    </div>
+  <script src="/js/utils.js"></script>
+  <script src="/js/menu.js"></script>
+</body>
+</html>

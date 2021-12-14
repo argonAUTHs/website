@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.name }}</title>
+  <link rel="stylesheet" href="/css/container.css">
+  <link rel="stylesheet" href="/css/responsive-blocks.css">
+  <link rel="stylesheet" href="/css/responsive-buffer.css">
+  <link rel="stylesheet" href="/css/utils.css">
+  <link rel="stylesheet" href="/css/buffer.css">
+  <link rel="stylesheet" href="/css/spacers.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/ui-kit.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  {% include "partials/fonts.njk" %}
+
+  <script>
+    (function() {
+      var html = document.getElementsByTagName('html')[0];
+
+      if(html) {
+        html.className +=html.className ? " js" : "js";
+      }
+
+      if (typeof SSVGRect !== "undefined") {
+        html.className +=html.className ? " svg" : "svg";
+        window.svg = true;
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="bg-container">
+  <div class="header">
+    <div class="header__spacer-top"></div>
+    {% container responsive, container %}
+    <header>
+      <div class="header__container responsive-blocks-container">
+        {% buffer %}
+          <div class="logo">
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="/img/logo-mobile.png">
+              <img
+                src="/img/logo.png" width="330" height="88" alt="{{ site.name }}">
+            </picture>
+          </div>
+        {% endBuffer %}
+        <div class="header__main-menu-burger">
+        </div>
+    </header>
+    {% endContainer %}
+  </div>
+  <div class="header__spacer"></div>
+  <div class="main">
+    <main>
+        <section>
+          <div class="hero">
+            {% container responsive, container %}
+            <div class="hero__spacer-top"></div>
+            <div class="responsive-blocks-container">
+              {% column_10_25_25_25_25 %}
+                <div class="header__main-menu-container" id="main-menu-container">
+                  {% include 'partials/menu.njk' %}
+                </div>
+              {% endColumn %}
+              {% column_90_75_75_75_75 %}
+                <h1>
+                  Digital<br>
+                  interactions<br>
+                  made in<br>
+                  <b>authentic way.</b>
+                </h1>
+              {% endColumn %}
+            </div>
+            <div class="hero__spacer-bottom"></div>
+          {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="our-story" id="about">
+            {% container responsive, container %}
+            <div class="our-story__spacer-top"></div>
+            <div class="responsive-blocks-container">
+              {% column_10_20_40_40_40 %}
+              {% endColumn %}
+              {% column_70_80_60_60_60 %}
+                <h2 class="visually-hidden">About us</h2>
+                <p class="p-big">
+                  We are a small team with big ambition. We want to have a real influence on the technology, hence we experiment, we invent and we create. For a better tomorrow.
+                </p>
+                <div class="spacer-30"></div>
+                <p class="p-small">
+                  Individuals establish trust by interactions in real life. We establish digital trust upon the authentic digital interaction, which are the foundation for Authentic System. We build solutions to support Authentic Systems by providing services and consultancy as well as connections to other communities.
+                </p>
+                <div class="our-story__spacer-between"></div>
+                {% buffer responsive %}
+                <a class="arrow-link responsive-blocks-container" href="/our-story/">
+                  <span class="d-inline-block float-left">Our story</span>
+                  <span aria-hidden="true" role="presentation" class="float-left">
+                    {% pictureSvgPng "img/arrow.svg", "", "191", "24" %}
+                  </span>
+                </a>
+                {% endBuffer %}
+              {% endColumn %}
+            </div>
+            <div class="our-story__spacer-bottom"></div>
+            {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="our-philosophy">
+          {% container responsive, container %}
+            <div class="our-philosophy__spacer-top"></div>
+            <div class="responsive-blocks-container">
+              {% column_20_20_25_25_25 %}
+              {% endColumn %}
+              {% column_55_80_55_55_55 %}
+                <h2 class="visually-hidden">Our philosophy</h2>
+                <div class="responsive-blocks-container">
+                  {% column_100_85_45_45_45 %}
+                    {% card responsive, "img/icon01.png", "", "Cryptographic agility", "Lorem ipsum dolor sit amet, consectetur adipiscing elit" %}
+                  {% endColumn %}
+                  {% column_100_15_10_10_10 %}
+                  {% endColumn %}
+                  {% column_100_85_45_45_45 %}
+                    {% card responsive, "img/icon01.png", "", "Unix philisophy", "Lorem ipsum dolor sit amet, consectetur adipiscing elit" %}
+                  {% endColumn %}
+                  {% column_100_85_45_45_45 %}
+                  {% card responsive, "img/icon01.png", "", "Authenticity first principle", "Lorem ipsum dolor sit amet, consectetur adipiscing elit" %}
+                  {% endColumn %}
+                  {% column_100_15_10_10_10 %}
+                  {% endColumn %}
+                  {% column_100_85_45_45_45 %}
+                  {% card responsive, "img/icon01.png", "", "Never trust, always verify", "Lorem ipsum dolor sit amet, consectetur adipiscing elit" %}
+                  {% endColumn %}
+                  {% column_100_15_10_10_10 %}
+                  {% endColumn %}
+                </div>
+                <div class="our-philosophy__spacer-bottom"></div>
+              {% endColumn %}
+              {% column_25_100_20_20_20 %}
+              {% endColumn %}
+            </div>
+            {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="our-domain" id="domain">
+            {% container responsive, container %}
+              <div class="responsive-blocks-container">
+                {% column_10_20_25_25_25 %}
+                {% endColumn %}
+                {% column_70_60_55_55_55 %}
+                  <h2 class="subtitle">
+                    Domain
+                  </h2>
+                  <p class="h2">
+                    We specialize in building<br>
+                    <strong>Authentic Systems</strong>
+                  </p>
+                  <div class="spacer-60"></div>
+                  <a href="#" class="d-inline-block">
+                    <span>Read more about</span>
+                    <span class="arrow-link arrow-link-type2 responsive-blocks-container" href="#">
+                      <span class="d-inline-block float-left">Authentic Data</span>
+                      <span aria-hidden="true" role="presentation" class="float-left">
+                        {% pictureSvgPng "img/arrow.svg", "", "191", "24" %}
+                      </span>
+                    </span>               
+                  </a>
+                {% endColumn %}
+                {% column_25_20_20_20_20 %}
+                {% endColumn %}
+              </div>
+              <div class="our-domain__spacer-bottom"></div>
+            {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="our-technology" id="tecnology">
+            {% container responsive, container %}
+              <div class="our-technology__spacer-top"></div>
+              <div class="responsive-blocks-container">
+                {% column_10_20_25_25_25 %}
+                {% endColumn %}
+                {% column_70_80_55_55_55 %}                
+                  <h2>Our technology</h2>
+                  <div class="spacer-100"></div>
+                  <div class="responsive-blocks-container">
+                    {% column_100_85_45_45_45 %}
+                    {% tecnologyCard responsive, "img/placeholder2.png", "", "Cryptographic primitives", "Asymmetric and symmetric keys along with one way hash functions constitute the foundation for any other technology from our tool set." %}
+                    {% endColumn %}
+                    {% column_100_15_10_10_10 %}
+                    {% endColumn %}
+                    {% column_100_85_45_45_45 %}
+                    {% tecnologyCard responsive, "img/placeholder2.png", "", "Cryptographic primitives", "Asymmetric and symmetric keys along with one way hash functions constitute the foundation for any other technology from our tool set." %}
+                    {% endColumn %}
+                    {% column_100_85_45_45_45 %}
+                    {% tecnologyCard responsive, "img/placeholder2.png", "", "KERI", "General purpose non blockchain ambient infrastructure that preserves same characteristics, but without the need of total ordered global consistent ledger." %}
+                    {% endColumn %}
+                    {% column_100_15_10_10_10 %}
+                    {% endColumn %}
+                    {% column_100_85_45_45_45 %}
+                    {% tecnologyCard responsive, "img/placeholder2.png", "", "OCA", "Defining domain boundaries within one system is not an easy task. A cross system boundaries are almost impossible to establish. OCA aims to provide such harmonization on a data level." %}
+                    {% endColumn %}
+                    {% column_100_85_45_45_45 %}
+                    {% tecnologyCard responsive, "img/placeholder2.png", "", "Provenance logs", "A specialized type of Event Sourcing where any event in the log is digitally signed by the one who triggered that event. The whole chain of events is cryptographically bound." %}
+                    {% endColumn %}
+                    {% column_100_15_10_10_10 %}
+                    {% endColumn %}
+                    {% column_100_85_45_45_45 %}
+                    {% tecnologyCard responsive, "img/placeholder2.png", "", "ACDC", "Authentic Chained Data Containers provide a unified platform for data in a very similar fashion that the supply chain containers are used to tnasport goods." %}
+                    {% endColumn %}
+                  </div>
+                {% endColumn %}
+                {% column_20_100_20_20_20 %}
+                {% endColumn %}
+              </div>
+            <div class="our-technology__spacer-bottom"></div>
+          {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="our-services" id="services">
+          {% container responsive, container %}
+          <div class="our-services__spacer-top"></div>
+          <div class="responsive-blocks-container">
+            {% column_10_20_25_25_25 %}
+            {% endColumn %}
+            {% column_80_80_75_75_75 %}                
+              <h2>Our services</h2>
+              <div class="spacer-100"></div>
+              {% servicesCard responsive, "img/placeholder-3.png", "", "Development", "We work with technology that just emerged and we understand the complexity behind it. We have coined or co-authored many of concepts of components around Authentic Systems, hence we have the expertise in this area." %}
+              <div class="spacer-60"></div>
+              {% servicesCard responsive, "img/placeholder-3.png", "", "Consultancy", "We are world-leading experts in the area of Authentic Systems. We are also members of DIF and TOIP foundations and we collaborate with these communities among the concepts and technologies to serve Authentic Systems." %}
+              <div class="spacer-60"></div>
+            {% endColumn %}
+          </div>
+          <div class="our-services__spacer-bottom"></div>
+          {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="jobs">
+            {% container responsive, container %}
+            <div class="jobs__spacer-top"></div>
+            <div class="responsive-blocks-container">
+              {% column_10_20_25_25_25 %}
+              {% endColumn %}
+              {% column_70_80_55_55_55 %}
+                <h2 class="subtitle">
+                  Jobs
+                </h2>
+                <p class="title-m">
+                  We are growing fast.<br>
+                </p>
+                
+                <a href="#" class="d-inline-block">
+                  See our currently<br>
+                  <span class="arrow-link arrow-link-type2 responsive-blocks-container" href="#">
+                    <span class="d-inline-block float-left">open positions.</span>
+                    <span aria-hidden="true" role="presentation" class="float-left">
+                      {% pictureSvgPng "img/arrow.svg", "", "191", "24" %}
+                    </span>
+                  </span>  
+                </a>
+
+              {% endColumn %}
+              {% column_20_100_20_20_20 %}
+              {% endColumn %}
+            </div>
+            <div class="jobs__spacer-bottom"></div>
+          {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="our-posts__spacer-outer-top" id='blog'>
+          <div class="our-posts">
+          {% container responsive, container %}
+            <div class="our-posts__spacer-top">
+              <div class="responsive-blocks-container">
+                {% column_40_40_55_55_55 %}
+                {% endColumn %}
+                {% column_60_60_35_35_35 %}
+                  <h2 class="big-title">
+                    We love <b>to share</b><br>
+                    our knowledge<br>
+                    and experience
+                  </h2>
+                  <div class="our-posts__spacer-inner"></div>
+                  {% buffer responsive %}
+                  <a href="#" class="arrow-link responsive-blocks-container" href="#">
+                    <span class="d-inline-block float-left">Check out blog</span>
+                    <span aria-hidden="true" role="presentation" class="float-left">
+                      {% pictureSvgPng "img/arrow.svg", "", "191", "24" %}
+                    </span>
+                  </a>  
+                  {% endBuffer %}
+                {% endColumn %}
+                {% column_20_10_10_10_10 %}
+                {% endColumn %}
+              </div>
+            <div class="our-posts__spacer-bottom">
+          {% endContainer %}
+          </div>
+          <div class="our-posts__spacer-outer-bottom">
+        </section>
+        <section>
+          <div class="partners">
+          {% container responsive, container %}
+            <div class="partners__spacer-top"></div>
+            <div class="responsive-blocks-container">
+              {% column_10_20_25_25_25 %}
+              {% endColumn %}
+              {% column_80_80_75_75_75 %}
+                <h2 class="p-med">We always work with the best</h2>
+                <div class="spacer-48"></div>
+                <div class="responsive-blocks-container">
+                  {% column_50_50_25_25_25 %}
+                    {% buffer responsive, "float-left" %}
+                      {% picture responsive, "img/partner1.png", "" %}
+                    {% endBuffer %}
+                  {% endColumn %}
+                  {% column_50_50_25_25_25 %}
+                    {% buffer responsive, "float-left" %}
+                      {% picture responsive, "img/partner2.png", "" %}
+                    {% endBuffer %}
+                  {% endColumn %}
+                  {% column_50_50_25_25_25 %}
+                    {% buffer responsive, "float-left" %}
+                      {% picture responsive, "img/partner3.png", "" %}
+                    {% endBuffer %}
+                  {% endColumn %}
+                  {% column_50_50_25_25_25 %}
+                    {% buffer responsive, "float-left" %}
+                      {% picture responsive, "img/partner4.png", "" %}
+                    {% endBuffer %}
+                  {% endColumn %}
+                </div>
+              {% endColumn %}
+            </div>
+            <div class="partners__spacer-bottom"></div>
+          {% endContainer %}
+          </div>
+        </section>
+        <section>
+          <div class="contacts" id='contact'>
+            {% container responsive, container %}
+            <div class="responsive-blocks-container">
+              {% column_10_10_25_25_25 %}
+              {% endColumn %}
+              {% column_90_90_75_75_75 %}
+                <h2 class="subtitle">
+                  Contact
+                </h2>
+                <p class="title-m">Let's stay in contact</p>
+                <div class="spacer-80"></div>
+                <div class="contact-form">
+                  <form method="POST">
+                    <div class="responsive-blocks-container">
+                      {% column_100_80_50_50_50 %}
+                        {% buffer responsive %}
+                          <label class="visually-hidden" for="user-name">
+                            First Name
+                          </label>
+                          <input class="text-field" type="text" name="user-name" id="user-name" required="" placeholder="First name">
+                        {% endBuffer %}
+                        {% buffer responsive %}
+                          <label class="visually-hidden" for="user-email">
+                            Mail
+                          </label>
+                          <input class="text-field" type="email" name="user-email" id="user-email" required="" placeholder="Mail">
+                        {% endBuffer %}
+                      {% endColumn %}
+                      {% column_100_80_50_50_50 %}
+                      {% endColumn %}
+                    </div>
+                    {% buffer responsive %}
+                      <label class="visually-hidden" for="user-text">
+                        Mail
+                      </label>
+                      <textarea class="text-field" name="user-text" id="user-text" required="" placeholder="Message"></textarea>
+                    {% endBuffer %}
+                    {% buffer responsive %}
+                    <div class="responsive-blocks-container">
+                      <button type="submit " class="ml-auto arrow-link primary-500 float-right text-left">
+                        <span class="d-inline-block float-left">Submit</span>
+                        <span aria-hidden="true" role="presentation" class="float-left">
+                          {% pictureSvgPng "img/arrow.svg", "", "191", "24" %}
+                        </span>
+                      </button>
+                      
+                    </div>
+                    {% endBuffer %}
+                  </form>
+                </div>
+              {% endColumn %}
+            </div>
+            <div class="contacts__spacer-bottom"></div>
+            {% endContainer %}
+          </div>
+        </section>
+      {{ content | safe }}
+    </main>
+  </div>
+  </div>
+  <script src="/js/utils.js"></script>
+  <script src="/js/menu.js"></script>
+</body>
+</html>

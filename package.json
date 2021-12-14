@@ -1,0 +1,24 @@
+{
+  "name": "open-software",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ab_softevol/open-software.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ab_softevol/open-software/issues"
+  },
+  "homepage": "https://gitlab.com/ab_softevol/open-software#readme",
+  "dependencies": {
+    "@11ty/eleventy": "github:vdse/eleventy#ad34fea0dced7e1c498fb355a44cf819b9cd1226",
+    "lib": "git+ssh://git@gitlab.com/ab_softevol/lib.git"
+  }
+}
