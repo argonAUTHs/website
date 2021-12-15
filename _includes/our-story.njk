@@ -33,29 +33,8 @@
   </script>
 </head>
 <body class="story">
-    <div class="header">
-      <div class="header__spacer-top"></div>
-      {% container responsive, container %}
-        <header>
-          <div class="header__container responsive-blocks-container">
-            {% column_100_100_25_25_25 %}
-              {% buffer %}
-                <div class="logo">
-                  <picture>
-                    <source
-                      media="(max-width: 767px)"
-                      srcset="/img/logo-mobile.png">
-                    <img
-                      src="/img/logo.png" width="330" height="88" alt="{{ site.name }}">
-                  </picture>
-                </div>
-              {% endBuffer %}
-            {% endColumn %}
-            <div class="header__main-menu-burger">
-            </div>
-        </header>
-      {% endContainer %}
-    </div>
+    {% include "partials/header.njk" %}
+
     <div class="bg-container">
         <main>
           {% container responsive %}

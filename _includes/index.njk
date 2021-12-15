@@ -34,27 +34,7 @@
 </head>
 <body>
   <div class="bg-container">
-  <div class="header">
-    <div class="header__spacer-top"></div>
-    {% container responsive, container %}
-    <header>
-      <div class="header__container responsive-blocks-container">
-        {% buffer %}
-          <div class="logo">
-            <picture>
-              <source
-                media="(max-width: 767px)"
-                srcset="/img/logo-mobile.png">
-              <img
-                src="/img/logo.png" width="330" height="88" alt="{{ site.name }}">
-            </picture>
-          </div>
-        {% endBuffer %}
-        <div class="header__main-menu-burger">
-        </div>
-    </header>
-    {% endContainer %}
-  </div>
+  {% include "partials/header.njk" %}
   <div class="header__spacer"></div>
   <div class="main">
     <main>
@@ -388,7 +368,7 @@
                     {% endBuffer %}
                     {% buffer responsive %}
                     <div class="responsive-blocks-container">
-                      <button type="submit " class="ml-auto arrow-link primary-500 float-right text-left">
+                      <button type="submit " class="ml-auto arrow-link primary-500 float-right text-left responsive-blocks-container">
                         <span class="d-inline-block float-left">Submit</span>
                         <span aria-hidden="true" role="presentation" class="float-left">
                           {% pictureSvgPng "img/arrow.svg", "", "191", "24" %}

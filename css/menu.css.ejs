@@ -9,6 +9,10 @@
   height: auto;
 }
 
+.logo a {
+  padding: 0;
+}
+
 @media(max-width: 767px) {
   .logo img {
     width: 42px;
@@ -94,7 +98,6 @@
 
   .story .header {
     background-color: transparent;
-    backdrop-filter: none;
   }
 
   .story .burger__button {
@@ -112,5 +115,9 @@
     backdrop-filter: blur(36px);
     padding: <%= responsive.GAP %>px 0; 
     border-radius: <%= responsive.GAP/2 %>px;
+  }
+
+  .story .main-menu {
+    background-color: transparent;
   }
 }
