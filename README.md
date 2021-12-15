@@ -1,4 +1,4 @@
-# os_website
+# Open Software
 
 ## Install
 
@@ -6,8 +6,8 @@ npm install
 
 ## Run
 
-eleventy --serve
+npx @11ty/eleventy --serve
 
 ## Build
 
-eleventy
+npx @11ty/eleventy
