@@ -18,7 +18,7 @@
   },
   "homepage": "https://gitlab.com/ab_softevol/open-software#readme",
   "dependencies": {
-    "@11ty/eleventy": "github:11ty/eleventy#pull/2112/head",
-    "elements": "gitlab:softevol/elements"
+    "elements": "github:Opensoftware/elements",
+    "@11ty/eleventy": "^1.0.0-beta.8"
   }
 }
