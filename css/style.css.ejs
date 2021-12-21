@@ -220,35 +220,30 @@ a img {
   padding: <%= Number(cards.CARD_3.GAP.default.y) - Number(cards.CARD_3.BORDER) %>px <%= Number(cards.CARD_3.GAP.default.x) - Number(cards.CARD_3.BORDER) %>px;
 }
 
-@media (max-width: <%= responsive.MEDIA.phone - 1 %>px) {
+@media (min-width: <%= responsive.MEDIA.phone %>px) {
   .card-3 {
     padding: <%= Number(cards.CARD_3.GAP.phone.y) - Number(cards.CARD_3.BORDER) %>px <%= Number(cards.CARD_3.GAP.phone.x) - Number(cards.CARD_3.BORDER) %>px;
   }
 }
 
-@media (min-width: <%= responsive.MEDIA.phone %>px) and (max-width: <%= responsive.MEDIA.tablet - 1 %>px) {
+@media (min-width: <%= responsive.MEDIA.tablet %>px) {
   .card-3 {
     padding: <%= Number(cards.CARD_3.GAP.tablet.y) - Number(cards.CARD_3.BORDER) %>px <%= Number(cards.CARD_3.GAP.tablet.x) - Number(cards.CARD_3.BORDER) %>px;
   }
 }
 
-@media (min-width: <%= responsive.MEDIA.tablet %>px) and (max-width: <%= responsive.MEDIA.laptop - 1 %>px) {
+@media (min-width: <%= responsive.MEDIA.laptop %>px) {
   .card-3 {
     padding: <%= Number(cards.CARD_3.GAP.laptop.y) - Number(cards.CARD_3.BORDER) %>px <%= Number(cards.CARD_3.GAP.laptop.x) - Number(cards.CARD_3.BORDER) %>px;
   }
 }
 
-@media (min-width: <%= responsive.MEDIA.laptop %>px) and (max-width: <%= responsive.MEDIA.desktop - 1 %>px) {
+@media (min-width: <%= responsive.MEDIA.desktop %>px) {
   .card-3 {
     padding: <%= Number(cards.CARD_3.GAP.desktop.y) - Number(cards.CARD_3.BORDER) %>px <%= Number(cards.CARD_3.GAP.desktop.x) - Number(cards.CARD_3.BORDER) %>px;
   }
 }
 
-@media (min-width: <%= responsive.MEDIA.desktop %>px) {
-  .card-3 {
-    padding: <%= Number(cards.CARD_3.GAP.default.y) - Number(cards.CARD_3.BORDER) %>px <%= Number(cards.CARD_3.GAP.default.x) - Number(cards.CARD_3.BORDER) %>px;
-  }
-}
 
 @media (max-width: <%= responsive.MEDIA.phone - 1 %>px) {
   .card-3 .spacer-48 {
@@ -280,8 +275,8 @@ a img {
 
 .our-posts {
   background-image: url("../img/backgrounds/blog_photo.png");
-  background-position: top 30% right 39vw;
-  background-size: auto 100%;
+  background-position: top 30% left -19%;
+  background-size: 67.5% auto;
   background-repeat: no-repeat;
 }
 

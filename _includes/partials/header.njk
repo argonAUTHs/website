@@ -1,9 +1,9 @@
 <div class="header">
   <div class="header__spacer-top"></div>
-  {% container responsive, container %}
+  {% max_width %}
     <header>
       <div class="header__container responsive-blocks-container">
-        {% column_100_100_25_25_25 %}
+        {% responsive_block "100_100_25_25_25" %}
           {% buffer %}
             <div class="logo">
               <a href="/">
@@ -16,10 +16,10 @@
                 </picture>
               </a>
             </div>
-          {% endBuffer %}
-        {% endColumn %}
+          {% end_buffer %}
+        {% end_responsive_block %}
         <div class="header__main-menu-burger">
         </div>
     </header>
-  {% endContainer %}
+  {% end_max_width %}
 </div>

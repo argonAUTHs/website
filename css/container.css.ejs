@@ -2,4 +2,50 @@
   permalink: css/container.css
 ---
 
-<%- include("../node_modules/elements/css/container/container-base.css.ejs"); %>
+<% let containerMaxWidth = responsive.MAX_WIDTH; %>
+<% let containerGap = responsive.GAP; %>
+
+<% if(typeof container !== "undefined" && container !== null && container.MAX_WIDTH && container.GAP) { %>
+  <% containerMaxWidth = container.MAX_WIDTH; %>
+  <% containerGap = container.GAP; %>
+<% } %>
+
+<% if(typeof(containerGap) === 'object' ) { %>
+  .container {
+    margin: 0 auto;
+    max-width: <%= containerMaxWidth - containerGap.default.x*2 %>px;
+    padding: <%= containerGap.default.y %>px <%= containerGap.default.x %>px;
+  }
+  
+  @media (min-width: <%= responsive.MEDIA.phone %>px) {
+    .container {
+      padding: <%= containerGap.phone.y %>px <%= containerGap.phone.x %>px;
+    }
+  }
+  
+  @media (min-width: <%= responsive.MEDIA.tablet %>px) {
+    .container {
+      padding: <%= containerGap.tablet.y %>px <%= containerGap.tablet.x %>px;
+    }
+  }
+  
+  @media (min-width: <%= responsive.MEDIA.laptop %>px) {
+    .container {
+      padding: <%= containerGap.laptop.y %>px <%= containerGap.laptop.x %>px;
+    }
+  }
+  
+  @media (min-width: <%= responsive.MEDIA.desktop %>px) {
+    .container {
+      padding: <%= containerGap.desktop.y %>px <%= containerGap.desktop.x %>px;
+    }
+  }
+
+<% } else { %>
+  .container {
+    max-width: <%= containerMaxWidth - containerGap*2 %>px;
+    padding: <%= containerGap %>px;
+    margin: 0 auto;
+  }
+<% } %>
+

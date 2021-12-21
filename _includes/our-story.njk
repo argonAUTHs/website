@@ -6,7 +6,6 @@
   <title>{{ site.name }}</title>
   <link rel="stylesheet" href="/css/container.css">
   <link rel="stylesheet" href="/css/responsive-blocks.css">
-  <link rel="stylesheet" href="/css/responsive-buffer.css">
   <link rel="stylesheet" href="/css/utils.css">
   <link rel="stylesheet" href="/css/buffer.css">
   <link rel="stylesheet" href="/css/spacers.css">
@@ -37,29 +36,29 @@
 
     <div class="bg-container">
         <main>
-          {% container responsive %}
+          {% max_width %}
           <div class="responsive-blocks-container">
-            {% column_100_100_25_25_25 %}
-            {% endColumn %}
-            {% column_100_100_75_75_75 %}
+            {% responsive_block "100_100_25_25_25" %}
+            {% end_responsive_block %}
+            {% responsive_block "100_100_75_75_75" %}
                 <div class="story__bg">
                 </div>
-            {% endColumn %}
+            {% end_responsive_block %}
           </div>
-          {% endContainer %}
-          {% container responsive %}
+          {% end_max_width %}
+          {% max_width %}
             <div class="responsive-blocks-container">
-              {% column_100_100_25_25_25 %}
+              {% responsive_block "100_100_25_25_25" %}
                 <div class="header__main-menu-container" id="main-menu-container">
                   {% include 'partials/menu.njk' %}
                 </div>
-              {% endColumn %}
-              {% column_100_100_75_75_75 %}
+              {% end_responsive_block %}
+              {% responsive_block "100_100_75_75_75" %}
                 <div class="responsive-blocks-container">
-                  {% column_5_10_100_100_100 %}
-                  {% endColumn %}
+                  {% responsive_block "5_10_100_100_100" %}
+                  {% end_responsive_block %}
 
-                  {% column_90_90_85_85_85 %}
+                  {% responsive_block "90_90_85_85_85" %}
                     <div class="story__spacer-top"></div>
                     <h1 class="big-title"><strong>Our story</strong></h1>
                     <div class="story__content-spacer-1"></div>
@@ -155,14 +154,14 @@
                     </div>
                     
                     <div class="story__spacer-bottom"></div>
-                  {% endColumn %}
+                  {% end_responsive_block %}
 
-                  {% column_5_100_15_15_15 %}
-                  {% endColumn %}
+                  {% responsive_block "5_100_15_15_15" %}
+                  {% end_responsive_block %}
                 </div>
-              {% endColumn %}
+              {% end_responsive_block %}
             </div>
-          {% endContainer %}
+          {% end_max_width %}
         </main>
     </div>
   <script src="/js/utils.js"></script>

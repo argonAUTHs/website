@@ -1,11 +1,11 @@
 {
   "CARD_3" : {
     "GAP": {
-      "phone": {"x": 27, "y": 27},
-      "tablet": {"x": 43, "y": 43},
+      "default": {"x": 27, "y": 27},
+      "phone": {"x": 43, "y": 43},
+      "tablet": {"x": 83, "y": 83},
       "laptop": {"x": 83, "y": 83},
-      "desktop": {"x": 83, "y": 83},
-      "default": {"x": 83, "y": 83}
+      "desktop": {"x": 83, "y": 83}
     },
     "BORDER" : 3
   }
