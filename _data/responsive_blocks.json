@@ -41,6 +41,13 @@
     "laptop": 0.55,
     "desktop": 0.55
   },
+  "55_80_75_55_55": {
+    "default": 0.55,
+    "phone": 0.8,
+    "tablet": 0.75,
+    "laptop": 0.55,
+    "desktop": 0.55
+  },
   "100_85_45_45_45": {
     "default": 1,
     "phone": 0.85,

@@ -71,7 +71,7 @@ module.exports = {
       'color': `${ON_BACKGROUND}`
     },
     'phone': {
-      'font-size': '35px',
+      'font-size': '32px',
     }
   },
   p: {
