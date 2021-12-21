@@ -8,42 +8,52 @@ const FMODS_FONT_FAMILY = 'Arial';
 const FONT_FAMILY_STYLE = 'sans-serif';
 
 module.exports = {
+  body: {
+    'default': {
+      'margin' : '0',
+      'padding' : `0`,
+      'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
+      'color': '#FFFFFF'
+    },
+  },
   h1: {
     'default': {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '81px',
-      'line-height': "1.11",
+      'font-size' : '34px',
+      'line-height': "1.12",
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
-    'tablet' : {
+    'phone': {
       "line-height": "1.09",
       'font-size' : '80px',
     },
-    'phone': {
-      'font-size' : '34px',
-      'line-height': '112%'
+    'tablet': {
+      'font-size': '81px',
+      'line-height': "1.11",
     }
   },
-
   h2: {
     'default': {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '81px',
-      'line-height': '1.12',
-      'font-weight': '400',
-    },
-    'tablet' : {
-      'font-size' : '70px',
-      'line-height': '1.26em',
-    },
-    'phone':{
       'font-size': '24px',
       'line-height': '1.2',
       'letter-spacing': '0.4px',
+      'font-weight': '400',
+      'color': '#FFFFFF'
+    },
+    'phone': {
+      'font-size' : '70px',
+      'line-height': '1.26em',
+      'letter-spacing': '0',
+    },
+    'tablet': {
+      'font-size': '81px',
+      'line-height': '1.12',
     }
   },
   h3: {
@@ -51,12 +61,13 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '35px',
+      'font-size': '14px',
       'line-height': '1.2',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
     'phone': {
-      'font-size': '14px',
+      'font-size': '35px',
     }
   },
   p: {
@@ -64,13 +75,14 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '30px',
+      'font-size': '12px',
       'line-height': '1.2',
       'letter-spacing': '0',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
     'phone': {
-      'font-size': '12px',
+      'font-size': '30px',
     }
   },
   ".p-med": {
@@ -78,37 +90,39 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '41px',
+      'font-size': '17px',
       'line-height': '1.2',
-      'letter-spacing': '-0.01em',
+      'letter-spacing': '-0.1px',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
-    "tablet": {
+    "phone": {
       'font-size': '35px',
       'letter-spacing': '0em',
     },
-    "phone": {
-      'font-size': '17px',
-      'letter-spacing': '-0.1px',
-    }
+    "tablet": {
+      'font-size': '41px',
+      'letter-spacing': '-0.01em',
+    },
   },
   ".title-m": {
     'default': {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '50px',
+      'font-size': '33px',
+      "letter-spacing": "2.5%",
       'line-height': '1.2',
-      'letter-spacing': '0.015em',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
-    "tablet": {
+    "phone": {
       'font-size': '68px',
       "letter-spacing": "0.01em"
     },
-    "phone": {
-      'font-size': '33px',
-      "letter-spacing": "2.5%"
+    "tablet": {
+      'font-size': '50px',
+      'letter-spacing': '0.015em',
     }
   },
   ".title-story-m": {
@@ -116,17 +130,18 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '50px',
+      'font-size': '30px',
       'line-height': '1.2',
       'letter-spacing': '0.015em',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
-    "tablet": {
+    "phone": {
       'font-size': '36px',
       "letter-spacing": "0.01em"
     },
-    "phone": {
-      'font-size': '30px',
+    "tablet": {
+      'font-size': '50px',
     }
   },
   ".p-big": {
@@ -134,15 +149,16 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
+      'font-size' : '20px',
+      'line-height': '100%',
+      'letter-spacing': '-0.25px',
+      'font-weight': '400',
+      'color': '#FFFFFF'
+    },
+    'phone': {
       'font-size': '35px',
       'line-height': '1.3',
       'letter-spacing': '0',
-      'font-weight': '400',
-    },
-    'phone': {
-      'font-size' : '20px',
-      'line-height': '100%',
-      'letter-spacing': '-0.25px'    
     }
   },
   ".p-small": {
@@ -150,15 +166,16 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '25px',
-      'line-height': '1.36',
-      'letter-spacing': '0',
-      'font-weight': '400',
-    },
-    'phone':{
       'font-size' : '16px',
       'line-height': '125%',
       'letter-spacing': '-0.35px',
+      'font-weight': '400',
+      'color': '#FFFFFF'
+    },
+    'phone':{
+      'font-size': '25px',
+      'line-height': '1.36',
+      'letter-spacing': '0',
     }
   },
 
@@ -167,71 +184,74 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '25px',
-      'line-height': '1.2',
-      'letter-spacing': '0',
-      'font-weight': '400',
-    },
-    'phone':{
       'font-size' : '13px',
       'line-height': '1.35',
+      'letter-spacing': '0',
+      'font-weight': '400',
+      'color': '#FFFFFF'
+    },
+    'phone':{
+      'font-size': '25px',
+      'line-height': '1.2',
     }
   },
 
   ".subtitle": {
     'default': {
       'margin' : '0',
-      'padding' : `${GAP}px`,
+      'padding' : `4px ${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '30px',
+      'font-size' : '13px',
       'line-height': '1.2',
-      'letter-spacing': '0',
+      'letter-spacing': '2%',
       'font-weight': '700',
       "text-transform": "uppercase",
       "color": PRIMARY_500
     },
     'phone':{
-      'padding' : `4px ${GAP}px`,
-      'font-size' : '13px',
-      'letter-spacing': '2%',
+      'padding' : `${GAP}px`,
+      'font-size': '30px',
+      'letter-spacing': '0',
     }
   },
   input: {
     'default': {
       'margin' : '0',
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '35px',
-      'line-height': '31px',
+      'font-size': '15px',
+      'line-height': '20px',
       'letter-spacing': '-0.04em',
       'font-weight': '300',
+      'color': '#FFFFFF'
     },
-    'tablet':{
+    'phone':{
       "font-size": "31px",
       "line-height": "31px",
       "letter-spacing": "-0.025em",
     }, 
-    'phone':{
-      'font-size': '15px',
-      'line-height': '20px',
+    'tablet':{
+      'font-size': '35px',
+      'line-height': '31px',
     }
   },
   textarea: {
     'default': {
       'margin' : '0',
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '35px',
-      'line-height': '31px',
+      'font-size': '15px',
+      'line-height': '20px',
       'letter-spacing': '-0.04em',
       'font-weight': '300',
+      'color': '#FFFFFF'
     },
-    'tablet':{
+    'phone':{
       "font-size": "31px",
       "line-height": "31px",
       "letter-spacing": "-0.025em",
     }, 
-    'phone':{
-      'font-size': '15px',
-      'line-height': '20px',
+    'tablet':{
+      'font-size': '35px',
+      'line-height': '31px',
     }
   },
   ".big-title": {
@@ -239,44 +259,44 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '60px',
+      'font-size': '24px',
       'line-height': '1.2',
       'letter-spacing': '0',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
-    'tablet':{
+    'tablphoneet':{
       'font-size': '50px',
     },
     'phone':{
-      'font-size': '24px',
-      'letter-spacing': '',
+      'font-size': '60px',
     }
   },
   ".main-menu__link": {
     'default': {
       'margin' : '0',
-      'padding' : `0 ${GAP}px`,
+      'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '35px',
+      'font-size': '16px',
       'line-height': '1.2',
       'letter-spacing': '0.03em',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
     'phone':{
-      'padding' : `${GAP}px`,
-      'font-size': '16px',
-      'letter-spacing': '',
+      'padding' : `0 ${GAP}px`,
+      'font-size': '35px',
     }
   },
   ".back-link": {
     'default': {
-      'font-size': '40px',
-    },
-    'tablet':{
-      'font-size': '30px',
+      'font-size': '20px',
     },
     'phone':{
-      'font-size': '20px'
+      'font-size': '30px',
+    },
+    'tablet':{
+      'font-size': '40px'
     }
   },
 
@@ -285,25 +305,27 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '38px',
+      'font-size': '15px',
       'line-height': '1.2',
       'letter-spacing': '0.03em',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
     'phone':{
-      'font-size': '15px',
+      'font-size': '38px',
       'line-height': '1.2',
     }
   },
 
   ".arrow-link-small": {
     'default': {
-      'font-size': '35px',
+      'font-size': '24px',
       'line-height': '1.2',
       'letter-spacing': '-0.01em',
+      'color': '#FFFFFF'
     },
     'phone':{
-      'font-size': '24px',
+      'font-size': '35px',
       'line-height': '1.2',
     }
   },
@@ -313,29 +335,30 @@ module.exports = {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '40px',
+      'font-size': '20px',
       'line-height': '1.2',
       'letter-spacing': '0.03em',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
     'phone':{
-      'font-size': '20px',
+      'font-size': '40px',
       'line-height': '1.2',
     }
   },
-
   button: {
     'default': {
       'margin' : '0',
       'padding' : `${GAP}px`,
       'font-family': `${MAIN_FONT_FAMILY}, ${FMODS_FONT_FAMILY}, ${FONT_FAMILY_STYLE}`,
-      'font-size': '38px',
+      'font-size': '20px',
       'line-height': '1.2',
       'letter-spacing': '0.03em',
       'font-weight': '400',
+      'color': '#FFFFFF'
     },
     'phone':{
-      'font-size': '20px',
+      'font-size': '38px',
       'line-height': '1.2',
     }
   }
