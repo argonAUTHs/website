@@ -236,5 +236,40 @@
     "tablet": 0.1,
     "laptop": 0.1,
     "desktop": 0.1
+  },
+  "80_70_45_45_45": {
+    "default": 0.8,
+    "phone": 0.7,
+    "tablet": 0.45,
+    "laptop": 0.45,
+    "desktop": 0.45
+  },
+  "10_5_0_0_0": {
+    "default": 0.1,
+    "phone": 0.05,
+    "tablet": 0.0,
+    "laptop": 0.0,
+    "desktop": 0.0
+  },
+  "10_25_55_55_55": {
+    "default": 0.1,
+    "phone": 0.25,
+    "tablet": 0.55,
+    "laptop": 0.55,
+    "desktop": 0.55
+  },
+  "0_5_0_0_0": {
+    "default": 0.0,
+    "phone": 0.05,
+    "tablet": 0.0,
+    "laptop": 0.0,
+    "desktop": 0.0
+  },
+  "100_95_100_100_100": {
+    "default": 1,
+    "phone": 0.95,
+    "tablet": 1,
+    "laptop": 1,
+    "desktop": 1
   }
 }
