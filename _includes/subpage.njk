@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.name }}</title>
+    <link rel="stylesheet" href="/css/container.css">
+    <link rel="stylesheet" href="/css/responsive-blocks.css">
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/buffer.css">
+    <link rel="stylesheet" href="/css/spacers.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/ui-kit.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    {% include "partials/fonts.njk" %}
+
+    <script>
+      (function() {
+        var html = document.getElementsByTagName('html')[0];
+
+        if(html) {
+          html.className +=html.className ? " js" : "js";
+        }
+
+        if (typeof SSVGRect !== "undefined") {
+          html.className +=html.className ? " svg" : "svg";
+          window.svg = true;
+        }
+      })();
+    </script>
+  </head>
+  <body class="story">
+    {% include "partials/header.njk" %}
+
+    <div class="bg-container">
+      <main>
+        {% max_width %}
+        <div class="responsive-blocks-container">
+          {% responsive_block "100_100_25_25_25" %}
+          {% end_responsive_block %}
+          {% responsive_block "100_100_75_75_75" %}
+          <div class="story__bg">
+          </div>
+          {% end_responsive_block %}
+        </div>
+        {% end_max_width %}
+        {% max_width %}
+        <div class="responsive-blocks-container">
+          {% responsive_block "100_100_25_25_25" %}
+          <div class="header__main-menu-container" id="main-menu-container">
+            {% include 'partials/menu.njk' %}
+          </div>
+          {% end_responsive_block %}
+          {% responsive_block "100_100_75_75_75" %}
+          <div class="responsive-blocks-container">
+            {% responsive_block "5_10_100_100_100" %}
+            {% end_responsive_block %}
+
+            {% responsive_block "90_90_85_85_85" %}
+            <div class="story__spacer-top"></div>
+            <h1 class="big-title"><strong>{{ title }}</strong></h1>
+            <div class="story__content-spacer-1"></div>
+            <div class="buffer">
+              <a href="/" class="back-link">Back</a>
+            </div>
+            <div class="story__content-spacer-1"></div>
+
+            <div class="markdown">{{ content | safe }}</div>
+            <div class="responsive-blocks-container">
+              <div class="buffer story-arrows">
+
+              </div>
+            </div>
+
+            <div class="story__spacer-bottom"></div>
+            {% end_responsive_block %}
+
+            {% responsive_block "5_100_15_15_15" %}
+            {% end_responsive_block %}
+          </div>
+          {% end_responsive_block %}
+        </div>
+        {% end_max_width %}
+      </main>
+    </div>
+    <script src="/js/utils.js"></script>
+    <script src="/js/menu.js"></script>
+  </body>
+</html>
