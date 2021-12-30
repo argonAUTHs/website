@@ -104,10 +104,6 @@ function end_max_width() {
 }
 
 function calcWidthes(media, operations) {
-  // console.log('media', media);
-  // console.log('operations', operations);
-
-
   let localWidthes = SCREENS.slice();
   let maxWidthArray = operations.filter(op => op.maxWidth);
   let maxWidth = null;
@@ -195,16 +191,16 @@ function calcWidthes(media, operations) {
   }
 
   localWidthesProcessed.sort(compareNumeric);
-  localWidthesProcessed.splice(localWidthesProcessed.indexOf(maxWidth), 1);
-  localWidthesProcessed.push(maxWidth);
+  let set = Array.from(new Set(localWidthesProcessed));
+  set.splice(set.indexOf(maxWidth), 1);
+  set.push(maxWidth);
 
   return localWidthesProcessed;
 }
 
 function calcSizes(media, operations) {
-  // console.log('op', operations);
   let sizesDefault = '100vw';
-  let maxWidth = '';
+  let maxWidth = null;
   let sizes = {
     default: sizesDefault,
     phone: sizesDefault,
@@ -220,6 +216,13 @@ function calcSizes(media, operations) {
     }
 
     if(op.adaptive) {
+      if(op.adaptive.default < 1) {
+        sizes.default = `(${sizes.default} * ${(op.adaptive.default).toFixed(2)})`;
+        if(maxWidth !== null && maxWidth >= media.desktop) {
+          sizes.maxWidth = Math.round(sizes.maxWidth * (op.adaptive.default));
+        }
+      }
+
       if(op.adaptive.phone < 1) {
         sizes.phone = `(${sizes.phone} * ${(op.adaptive.phone).toFixed(2)})`;
         if(maxWidth !== null && maxWidth < media.phone) {
@@ -245,13 +248,6 @@ function calcSizes(media, operations) {
         sizes.desktop = `(${sizes.desktop} * ${(op.adaptive.desktop).toFixed(2)})`;
         if(maxWidth !== null && maxWidth >= media.laptop && maxWidth < media.desktop) {
           sizes.maxWidth = Math.round(sizes.maxWidth * (op.adaptive.desktop));
-        }
-      }
-
-      if(op.adaptive.default < 1) {
-        sizes.default = `(${sizes.default} * ${(op.adaptive.default).toFixed(2)})`;
-        if(maxWidth !== null && maxWidth >= media.desktop) {
-          sizes.maxWidth = Math.round(sizes.maxWidth * (op.adaptive.default));
         }
       }
     }
@@ -302,6 +298,10 @@ function calcSizes(media, operations) {
     if(size === 'maxWidth') {
       result = `(min-width: ${maxWidth}px) ${Math.round(sizes[size])}px, ` + result;
     }
+        
+    if(size  === 'default') {
+      result = result + `calc(${sizes[size]})`;
+    }
 
     if(size  === 'phone') {
       result = `(min-width: ${media.phone}px) calc(${sizes[size]}), ` + result;
@@ -317,10 +317,6 @@ function calcSizes(media, operations) {
 
     if(size  === 'desktop') {
       result = `(min-width: ${media.desktop}px) calc(${sizes[size]}), ` + result;
-    }
-    
-    if(size  === 'default') {
-      result = `calc(${sizes[size]})` + result;
     }
   }
   return result;

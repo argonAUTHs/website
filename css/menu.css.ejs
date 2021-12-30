@@ -111,6 +111,7 @@
   .main-menu {
     position: fixed;
     top: 250px;
+    left: max(calc((100vw - 1920px)/2 + 80px),  80px);
     background-color: <%= colors['Surface 2'].color %>;
     backdrop-filter: blur(36px);
     padding: <%= responsive.GAP %>px 0; 
@@ -120,4 +121,9 @@
   .story .main-menu {
     background-color: transparent;
   }
+}
+
+.menu-fix {
+  position: relative;
+  max-width: 1920px;
 }
