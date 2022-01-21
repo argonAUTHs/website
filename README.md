@@ -1,4 +1,4 @@
-# Open Software
+# argonauths
 
 ## Install
 

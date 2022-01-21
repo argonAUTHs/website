@@ -1,5 +1,5 @@
 ---
 layout: index.njk
-title: Open Software
+title: argonauths
 description:
 ---
