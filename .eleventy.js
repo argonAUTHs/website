@@ -37,7 +37,7 @@ function popFromWidthStack(page) {
 
 function pushGapOnWidthStack(page, unusedSpaceWidth) {
   if(typeof(unusedSpaceWidth) === 'object') {
-    let obj = JSON.parse(JSON.stringify(unusedSpaceWidth)); 
+    let obj = JSON.parse(JSON.stringify(unusedSpaceWidth));
     // console.log('obj', obj);
     for (let key in obj) {
       // console.log('key', key);
@@ -136,7 +136,7 @@ function calcWidthes(media, operations) {
   let localWidthesProcessed = localWidthes.slice();
 
   for(let i = 0; i < localWidthesProcessed.length; i++) {
-    for(let op of operations) {    
+    for(let op of operations) {
       if(op.gap) {
         let gap = 0;
         if(typeof(op.gap) === 'object') {
@@ -157,7 +157,7 @@ function calcWidthes(media, operations) {
         }
         localWidthesProcessed[i] -= gap;
       }
-  
+
       if(op.adaptive) {
 
         if(localWidthes[i] < media.phone) {
@@ -236,14 +236,14 @@ function calcSizes(media, operations) {
           sizes.maxWidth = Math.round(sizes.maxWidth * (op.adaptive.tablet));
         }
       }
-      
+
       if(op.adaptive.laptop < 1) {
         sizes.laptop = `(${sizes.laptop} * ${(op.adaptive.laptop).toFixed(2)})`;
         if(maxWidth !== null && maxWidth >= media.tablet && maxWidth < media.laptop) {
           sizes.maxWidth = Math.round(sizes.maxWidth * (op.adaptive.laptop));
         }
       }
- 
+
       if(op.adaptive.desktop < 1) {
         sizes.desktop = `(${sizes.desktop} * ${(op.adaptive.desktop).toFixed(2)})`;
         if(maxWidth !== null && maxWidth >= media.laptop && maxWidth < media.desktop) {
@@ -257,13 +257,13 @@ function calcSizes(media, operations) {
       if(typeof(op.gap) === 'object') {
         sizes.default = `(${sizes.default} - ${op.gap.default.x}px)`;
         sizes.phone = `(${sizes.phone} - ${op.gap.phone.x}px)`;
-        sizes.tablet = `(${sizes.tablet} - ${op.gap.tablet.x}px)`; 
+        sizes.tablet = `(${sizes.tablet} - ${op.gap.tablet.x}px)`;
         sizes.laptop = `(${sizes.laptop} - ${op.gap.laptop.x}px)`;
         sizes.desktop = `(${sizes.desktop} - ${op.gap.desktop.x}px)`;
       } else {
         sizes.default = `(${sizes.default} - ${op.gap}px)`;
         sizes.phone = `(${sizes.phone} - ${op.gap}px)`;
-        sizes.tablet = `(${sizes.tablet} - ${op.gap}px)`; 
+        sizes.tablet = `(${sizes.tablet} - ${op.gap}px)`;
         sizes.laptop = `(${sizes.laptop} - ${op.gap}px)`;
         sizes.desktop = `(${sizes.desktop} - ${op.gap}px)`;
       }
@@ -298,7 +298,7 @@ function calcSizes(media, operations) {
     if(size === 'maxWidth') {
       result = `(min-width: ${maxWidth}px) ${Math.round(sizes[size])}px, ` + result;
     }
-        
+
     if(size  === 'default') {
       result = result + `calc(${sizes[size]})`;
     }
@@ -306,11 +306,11 @@ function calcSizes(media, operations) {
     if(size  === 'phone') {
       result = `(min-width: ${media.phone}px) calc(${sizes[size]}), ` + result;
     }
-    
+
     if(size  === 'tablet') {
       result = `(min-width: ${media.tablet}px) calc(${sizes[size]}), ` + result;
     }
-    
+
     if(size  === 'laptop') {
       result = `(min-width: ${media.laptop}px) calc(${sizes[size]}), ` + result;
     }
@@ -353,7 +353,7 @@ async function picture(src, alt) {
                   <source type="image/svg+xml" srcset="https://picture.softevol.com/svg/image-${metadata.png[0].width}x${Math.round(metadata.png[0].width / 16 * 9)}.svg ${metadata.png[0].width}w">
                   <img src="https://picture.softevol.com/svg/image-${metadata.png[0].width}x${Math.round(metadata.png[0].width / 16 * 9)}.svg" alt="${alt}" width="${metadata.png[0].width}" height="${Math.round(metadata.png[0].width / 16 * 9)}">
                 </picture>`
-    
+
     } else {
       result = `<picture>
       <source type="image/svg+xml" srcset="/${src}">
@@ -384,14 +384,14 @@ async function picture(src, alt) {
     // console.log('fallbackMetadata.png', fallbackMetadata.png);
 
     if(isTEST) {
-      result  = 
+      result  =
       `<picture>
         <source sizes="${sizes}" type="image/svg+xml" srcset="\n`;
       result += metadata['webp'].map(webp => `      https://picture.softevol.com/svg/image-${webp.width}x${Math.round(webp.width / 16 * 9)}.svg ${webp.width}w`).join(",\n");
       result += `">\n`;
       result += `<!-- TODO add img -->\n`;
       result += `  <img src="https://picture.softevol.com/svg/image-${fallbackMetadata.png[0].width}x${Math.round(fallbackMetadata.png[0].width / 16 * 9)}.svg" alt="${alt}" width="${fallbackMetadata.png[0].width}" height="${Math.round(fallbackMetadata.png[0].width / 16 * 9)}">\n`;
-      result += `</picture>`;    
+      result += `</picture>`;
     } else {
       let fallbackWidth;
       let fallbackHeight;
@@ -404,7 +404,7 @@ async function picture(src, alt) {
         fallbackHeight = fallbackMetadata.png[0].height;
       }
 
-      result  = 
+      result  =
       `<picture>
         <source sizes="${sizes}" type="image/webp" srcset="\n`;
       result += metadata['webp'].map(webp => `      ${webp.srcset}`).join(",\n");
@@ -423,7 +423,7 @@ async function picture(src, alt) {
       }
     });
 
-    
+
     let fallbackMetadata = await Image(src, {
       widths: [srcset[srcset.length - 1]],
       formats: ['jpeg'],
@@ -440,7 +440,7 @@ async function picture(src, alt) {
         array.push(i);
       }
 
-      result  = 
+      result  =
       `<picture>
         <source sizes="${sizes}" type="image/svg+xml" srcset="\n`;
       // result += metadata['webp'].map(webp => `      https://picture.softevol.com/svg/image-${webp.width}x${Math.round(webp.width / 16 * 9)}.svg ${webp.width}w`).join(",\n");
@@ -448,7 +448,7 @@ async function picture(src, alt) {
       result += `">\n`;
       result += `<!-- TODO add img -->\n`;
       result += `  <img src="https://picture.softevol.com/svg/image-${fallbackMetadata.jpeg[0].width}x${Math.round(fallbackMetadata.jpeg[0].width / 16 * 9)}.svg" alt="${alt}" width="${fallbackMetadata.jpeg[0].width}" height="${Math.round(fallbackMetadata.jpeg[0].width / 16 * 9)}">\n`;
-      result += `</picture>`;    
+      result += `</picture>`;
     } else {
       let fallbackWidth;
       let fallbackHeight;
@@ -461,7 +461,7 @@ async function picture(src, alt) {
         fallbackHeight = fallbackMetadata.jpeg[0].height;
       }
 
-      result  = 
+      result  =
       `<picture>
         <source sizes="${sizes}" type="image/webp" srcset="\n`;
       result += metadata['webp'].map(webp => `      ${webp.srcset}`).join(",\n");
@@ -481,7 +481,7 @@ async function pictureSvgPng(src, alt, width, height) {
       // You bet we throw an error on missing alt (alt="" works okay)
       throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
   }
-  
+
   let metadata = await Image(src, {
       formats: ['png', 'svg'],
       outputDir: './_site/img'
@@ -489,7 +489,7 @@ async function pictureSvgPng(src, alt, width, height) {
 
   // TODO: figure out that loading="lazy" decoding="async"
   // TODO: set image name like param
-  
+
   return `<picture>
               <source type="image/svg+xml" srcset="${metadata.svg[0].url}">
               <img src="${metadata.png[0].url}" width="${width}" height="${height}" alt="${alt}">
@@ -544,7 +544,7 @@ module.exports = function (eleventyConfig) {
     let card = `
       <div class="card-1">
         <div class="responsive-blocks-container">
-        ${(responsive_block.call(this, "55_55_100_100_100"))}
+        ${(responsive_block.call(this, "30_35_50_50_50"))}
         <div class="card-1__img" role="presentation" aria-hidden="true">
           ${buffer.call(this)}
             ${(await picture.call(this, src, alt))}
@@ -555,11 +555,11 @@ module.exports = function (eleventyConfig) {
         ${end_responsive_block.call(this)}
         </div>
         <div class="spacer-36"></div>
-        <h3 class="primary-500 text-uppercase text-center-lp">
+        <h3 class="primary-500 text-uppercase">
           ${title}
         </h3>
         <div class="spacer-6"></div>
-        <p class="text-center-lp"> 
+        <p class="">
           ${description}
         </p>
         <div class="spacer-80"></div>
@@ -569,7 +569,7 @@ module.exports = function (eleventyConfig) {
     return card;
   }
 
-  async function tecnologyCard(src, alt, title, description) { 
+  async function tecnologyCard(src, alt, title, description) {
     let card = `
     <div class="card-2">
       <div class="card-2__img" role="presentation" aria-hidden="true">
@@ -586,7 +586,7 @@ module.exports = function (eleventyConfig) {
         <strong>${title}</strong>
       </h3>
       <div class="spacer-20"></div>
-      <p> 
+      <p>
         ${description}
       </p>
       <div class="card-2__spacer-bottom"></div>
@@ -623,7 +623,7 @@ module.exports = function (eleventyConfig) {
     </div>
     ${end_buffer.call(this)}
     `;
-    
+
    popFromWidthStack(this.page);
     return card;
   }
