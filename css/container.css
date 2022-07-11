@@ -1,0 +1,42 @@
+
+
+
+
+
+  
+  
+
+
+
+  .container {
+    margin: 0 auto;
+    max-width: 1896px;
+    padding: 12px 12px;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      padding: 12px 80px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 12px 80px;
+    }
+  }
+  
+  @media (min-width: 1240px) {
+    .container {
+      padding: 12px 80px;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .container {
+      padding: 12px 80px;
+    }
+  }
+
+
+

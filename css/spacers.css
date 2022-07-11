@@ -1,0 +1,447 @@
+
+/* header */
+
+.header__spacer-top {
+  padding-top: 100px;
+}
+
+@media(max-width: 767px) {
+  .header__spacer-top {
+    padding-top: 0;
+  }
+}
+
+@media(max-width: 1023px) {
+  .header__spacer {
+    padding-top: 300px;
+  }
+}
+
+
+@media(max-width: 767px) {
+  .header__spacer {
+    padding-top: 150px;
+  }
+}
+
+/* hero */
+
+.hero__spacer-top {
+  padding-top: 400px;
+}
+
+@media(max-width: 1023px) {
+  .hero__spacer-top {
+    padding-top: 310px;
+  }
+}
+
+@media(max-width: 767px) {
+  .hero__spacer-top {
+    padding-top: 195px;
+  }
+}
+
+.hero__spacer-bottom {
+  padding-top: 180px;
+}
+
+
+@media(max-width: 1023px) {
+  .hero__spacer-bottom {
+    padding-top: 310px;
+  }
+}
+
+@media(max-width: 767px) {
+  .hero__spacer-bottom {
+    padding-top: 130px;
+  }
+}
+
+.our-story__spacer-top {
+  padding-top: 160px;
+}
+
+@media(max-width: 767px) {
+  .our-story__spacer-top {
+    padding-top: 80px;
+  }
+
+  .our-story .spacer-30 {
+    padding-top: 0;
+  }
+}
+
+.our-story__spacer-between {
+  padding-top: 48px;
+}
+
+@media(max-width: 1023px) {
+  .our-story__spacer-between {
+    padding-top: 80px;
+  }
+}
+
+.our-story__spacer-bottom {
+  padding-top: 40px;
+}
+
+@media(max-width: 1023px) {
+  .our-story__spacer-bottom {
+    padding-top: 240px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-story__spacer-bottom {
+    padding-top: 95px;
+  }
+}
+
+
+.our-philosophy__spacer-top {
+  padding-top: 220px
+}
+
+@media(max-width: 1023px) {
+  .our-philosophy__spacer-top {
+    padding-top: 160px
+  }  
+}
+
+@media(max-width: 767px) {
+  .our-philosophy__spacer-top {
+    padding-top: 32px
+  }  
+}
+
+.our-philosophy__spacer-bottom {
+  padding-top: 220px;
+}
+
+@media(max-width: 1023px) {
+  .our-philosophy__spacer-bottom {
+    padding-top: 170px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-philosophy__spacer-bottom {
+    padding-top: 75px;
+  }
+}
+
+.our-domain__spacer-bottom {
+  padding-top: 440px;
+}
+
+@media(max-width: 767px) {
+  .our-domain__spacer-bottom {
+    padding-top: 285px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-domain .spacer-60 {
+    padding-top: 20px;
+  }
+}
+
+
+@media(max-width: 767px) {
+  .our-technology .spacer-100 {
+    padding-top: 30px;
+  }
+}
+
+.our-technology__spacer-top {
+  padding-top: 160px;
+}
+
+@media(max-width: 1023px) {
+  .our-technology__spacer-top {
+    padding-top: 100px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-technology__spacer-top {
+    padding-top: 50px;
+  }
+}
+
+
+.our-technology__spacer-inner {
+  padding-top: 100px;
+}
+
+@media(max-width: 1023px) {
+  .our-technology__spacer-inner {
+    padding-top: 120px;
+  }
+}
+
+@media(max-width: 1023px) {
+  .our-technology__spacer-bottom {
+    padding-top: 130px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-technology__spacer-bottom {
+    padding-top: 60px;
+  }
+}
+
+.card-2__spacer {
+  padding-top: 48px;
+}
+
+@media(max-width: 1023px) {
+  .card-2__spacer {
+    padding-top: 36px;
+  }
+}
+
+@media(max-width: 767px) {
+  .card-2__spacer {
+    padding-top: 0;
+  }
+}
+
+.card-2 .spacer-20 {
+  padding-top: 0;
+  padding-top: 0;
+}
+
+.card-2__spacer-bottom {
+  padding-top: 80px;
+}
+
+@media(max-width: 1023px) {
+  .card-2__spacer-bottom {
+    padding-top: 110px;
+  }
+}
+
+@media(max-width: 767px) {
+  .card-2__spacer-bottom {
+    padding-top: 12px;
+  }
+}
+
+.our-services__spacer-top {
+  padding-top: 190px;
+}
+
+@media(max-width: 1023px) {
+  .our-services__spacer-top {
+    padding-top: 160px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-services__spacer-top {
+    padding-top: 44px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-services .spacer-100 {
+    padding-top: 40px;
+  }
+
+  .our-services .spacer-60 {
+    padding-top: 0px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-services__spacer-bottom {
+    padding-bottom: 60px;
+  }
+}
+
+.jobs__spacer-top {
+  padding-top: 300px;
+}
+
+@media(max-width: 1023px) {
+  .jobs__spacer-top {
+    padding-top: 200px;
+  }
+}
+
+@media(max-width: 767px) {
+  .jobs__spacer-top {
+    padding-top: 0;
+  }
+}
+
+.jobs__spacer-bottom {
+  padding-top: 410px;
+}
+
+@media(max-width: 1023px) {
+  .jobs__spacer-bottom {
+    padding-top: 290px;
+  }
+}
+
+@media(max-width: 767px) {
+  .jobs__spacer-bottom {
+    padding-top: 132px;
+  }
+}
+
+.our-posts__spacer-outer-top {
+  padding-top: 150px;
+}
+
+@media(max-width: 1023px) {
+  .our-posts__spacer-outer-top {
+    padding-top: 130px;
+  }
+}
+
+@media(max-width: 767px) {
+  .our-posts__spacer-outer-top {
+    padding-top: 90px;
+  }
+}
+
+.our-posts__spacer-top {
+  padding-top: 108px;
+}
+
+@media(max-width: 1023px) {
+  .our-posts__spacer-top {
+    padding-top: 50px;
+  }
+}
+
+@media(max-width: 1023px) {
+  .our-posts__spacer-top {
+    padding-top: 50px;
+  }
+}
+
+.our-posts__spacer-bottom {
+  padding-top: 120px;
+}
+
+@media(max-width: 767px) {
+  .our-posts__spacer-bottom {
+    padding-top: 18px;
+  }
+}
+
+.partners__spacer-top {
+  padding-top: 140px;
+}
+
+@media(max-width: 767px) {
+  .partners__spacer-top {
+    padding-top: 80px;
+  }
+}
+
+@media(max-width: 767px) {
+  .partners .spacer-48 {
+    padding-top: 30px;
+  }
+}
+
+.partners__spacer-bottom {
+  padding-top: 230px;
+}
+
+@media(max-width: 1023px) {
+  .partners__spacer-bottom {
+    padding-top: 100px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .partners__spacer-bottom {
+    padding-top: 40px;
+  }
+}
+
+.contacts__spacer-bottom {
+  padding-bottom: 300px;
+}
+
+@media(max-width: 1023px) {
+  .contacts__spacer-bottom {
+    padding-bottom: 200px;
+  }
+}
+
+@media(max-width: 767px) {
+  .contacts__spacer-bottom {
+    padding-bottom: 80px;
+  }
+}
+
+.our-posts__spacer-inner {
+  padding-top: 120px
+}
+
+@media(max-width: 1023px) {
+  .our-posts__spacer-inner {
+    padding-top: 140px
+  }
+}
+
+@media(max-width: 767px) {
+  .our-posts__spacer-inner {
+    padding-top: 110px;
+  }
+}
+
+.spacer-140 {
+  padding-top: 140px;
+}
+
+.spacer-100 {
+  padding-top: 100px;
+}
+
+.spacer-80 {
+  padding-top: 80px;
+}
+
+.spacer-60 {
+  padding-top: 60px;
+}
+
+.spacer-48 {
+  padding-top: 48px;
+}
+
+.spacer-40 {
+  padding-top: 40px;
+}
+
+.spacer-36 {
+  padding-top: 36px;
+}
+
+.spacer-30 {
+  padding-top: 30px;
+}
+
+.spacer-24{
+   padding-top: 24px;
+}
+
+.spacer-20 {
+  padding-top: 20px;
+}
+
+.spacer-6 {
+  padding-top: 6px;
+}

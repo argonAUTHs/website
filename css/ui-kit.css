@@ -1,0 +1,160 @@
+
+.main-menu__link {
+  display: block;
+}
+
+button{
+  border: 0;
+  background: 0;
+  cursor: pointer;
+}
+
+input, textarea{
+  width: 100%;
+  padding: 15px 26px;
+  color: #6aaab7;
+  border: 3px solid #6aaab7;
+  font-weight: 300;
+  resize:none;
+  
+  /*  reset  */
+  background: 0;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 320px;
+}
+
+input::placeholder, textarea::placeholder{
+  font-style: italic;
+  color: #6aaab7;
+  font-weight: 300;
+  opacity: 1;
+}
+
+input:hover, textarea:hover{
+  color: #4a727a;
+}
+
+input:active, textarea:active,
+input:focus, textarea:focus{
+  border:3px solid #87bbc5; 
+  color:#87bbc5;
+  outline: none;
+}
+
+a{
+  color: #6aaab7;
+  text-decoration:none;
+}
+
+a:hover{
+  color: #87bbc5;
+}
+
+
+.back-link{
+  padding-left: 30px;
+  background: url(/img/small-arrow.svg) 5px center no-repeat;
+  transition: .3s background-position ease-in-out;
+}
+
+.back-link:hover{
+  background-position: 0 center;
+}
+
+.arrow-link{
+  padding: 0;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.arrow-link span{
+  transition: .3s color ease-in-out;
+  margin-right: 10px;
+}
+
+.arrow-link img{
+  width: 191px;
+  height: 24px;
+  transition: .3s transform ease-in-out;
+}
+
+.arrow-link-type2 span{
+  margin-right: 40px;
+}
+
+.arrow-link-small img{
+  width: 120px;
+}
+
+a:hover ,a:focus{
+  color: #87bbc5;
+}
+
+a:hover .arrow-link img,.arrow-link:hover img, .arrow-link:focus img, a:focus .arrow-link img{
+  transform: translateX(8px);
+}
+
+@media (max-width: 1023px) {
+  .arrow-link{
+  }
+
+  .arrow-link.arrow-link-type2{
+    flex-direction: column;
+  }
+
+  .arrow-link.arrow-link-type2 img{
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .arrow-link:hover, .arrow-link:focus, a:focus .arrow-link, a:hover .arrow-link{
+    background-position: 100% 57%;
+  }
+
+  .arrow-link.arrow-link-type2:hover, .arrow-link.arrow-link-type2:focus, a:focus .arrow-link.arrow-link-type2, a:hover .arrow-link.arrow-link-type2{
+    background-position: 15% 98%;
+  }
+
+  input, textarea{
+    padding: 13px 22px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  input, textarea{
+    padding: 3px 13px;
+  }
+}
+
+/* burger */
+
+.burger {
+
+}
+
+.burger__button,
+.js .burger__button {
+  width: 50px;
+  height: 33px;
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50px 33px;
+  box-sizing: content-box;
+}
+
+@media(max-width: 767px) {
+  .burger__button,
+  .js .burger__button {
+    width: 21px;
+    height: 14px;
+    background-size: 21px 14px;
+  }
+}

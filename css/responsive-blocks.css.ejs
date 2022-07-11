@@ -1,0 +1,105 @@
+---
+  permalink: css/responsive-blocks.css
+---
+
+.responsive-blocks-container { 
+  zoom: 1; 
+}
+
+.responsive-blocks-container:before,
+.responsive-blocks-container:after { 
+  content: "";
+  display: table; 
+}
+
+.responsive-blocks-container:after {
+  clear: both; 
+}
+
+@supports (display: flex) {
+  .responsive-blocks-container::before,
+  .responsive-blocks-container::after {
+    content: none;
+  }
+  .responsive-blocks-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+<% for(let blockType in responsive_blocks) { %>
+.responsive-block-<%= blockType %> {
+  float: left;
+}
+<% } %>
+
+<% for(let blockType in responsive_blocks) { %>
+  <% for(let media in responsive_blocks[blockType]) { %>
+    <% if(media == 'default') { %>
+.responsive-block-<%= blockType %> {
+  width: <%= (responsive_blocks[blockType][media]*100).toFixed(2) %>%;
+}
+    <% } %>
+    <% if(media == 'phone') { %>
+@media (min-width: <%= responsive.MEDIA.phone %>px) {
+  .responsive-block-<%= blockType %> {
+    width: <%= (responsive_blocks[blockType][media]*100).toFixed(2) %>%;
+  }
+}
+    <% } %>
+    <% if(media == 'tablet') { %>
+@media (min-width: <%= responsive.MEDIA.tablet %>px) {
+  .responsive-block-<%= blockType %> {
+    width: <%= (responsive_blocks[blockType][media]*100).toFixed(2) %>%;
+  }
+}
+    <% } %>
+    <% if(media == 'laptop') { %>
+@media (min-width: <%= responsive.MEDIA.laptop %>px) {
+  .responsive-block-<%= blockType %> {
+    width: <%= (responsive_blocks[blockType][media]*100).toFixed(2) %>%;
+  }
+}
+    <% } %>
+    <% if(media == 'desktop') { %>
+@media (min-width: <%= responsive.MEDIA.desktop %>px) {
+  .responsive-block-<%= blockType %> {
+    width: <%= (responsive_blocks[blockType][media]*100).toFixed(2) %>%;
+  }
+}
+    <% } %>
+  <% } %>
+<% } %>
+
+.y-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.y-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.y-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.x-top {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.x-center {
+  display: flex;
+  justify-content: center;
+}
+
+.x-bottom {
+  display: flex;
+  justify-content: flex-end;
+}

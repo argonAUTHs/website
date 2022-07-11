@@ -1,0 +1,106 @@
+---
+  permalink: js/menu.js
+---
+
+var Menu = {
+  RESPONSIVE_BREAKPOINT: <%= menu.breakpoint %>
+};
+
+(function() {
+  if(document.addEventListener && window.isMediaQueriesSupported()) {
+    var mainMenuContainer = document.querySelector('.header__main-menu-container');
+    var burgerButtonContainer = document.querySelector('.header__main-menu-burger');
+    var burgerButton = document.createElement('button');
+    window.classFunction.addClass(burgerButton, 'burger__button');
+    burgerButton.setAttribute('id', 'burger-button');
+    burgerButton.setAttribute('aria-haspopup', 'true');
+    burgerButton.setAttribute('aria-expanded', 'false');
+    burgerButton.setAttribute('aria-label', 'Open menu');
+    burgerButton.setAttribute('style', 'background-image: url("data:image/svg+xml;base64,<%- include("../img/buttons/burger-base64.svg.ejs"); %>");');
+    burgerButtonContainer.appendChild(burgerButton);
+
+    var firstLink = mainMenuContainer.querySelector('.main-menu__link');
+
+    // TODO: chacge comment for aria atributes.
+    function toggleDropdownMenu() {
+      if(burgerButton.getAttribute('aria-expanded') === 'true') { // If menu is already opened (check 'aria-expanded' attribute).
+        burgerButton.setAttribute('aria-expanded', 'false');
+        burgerButton.setAttribute('aria-label', 'Open menu');
+        burgerButton.setAttribute('style', 'background-image: url("data:image/svg+xml;base64,<%- include("../img/buttons/burger-base64.svg.ejs"); %>");');
+        window.classFunction.removeClass(mainMenuContainer, 'header__main-menu-container--opened');
+        document.removeEventListener('click', window.emptySpaceClick);
+      } else {
+        burgerButton.setAttribute('aria-expanded', 'true');
+        burgerButton.setAttribute('aria-label', 'Close menu');
+        burgerButton.setAttribute('style', 'background-image: url("data:image/svg+xml;base64,<%- include("../img/buttons/cross-base64.svg.ejs"); %>");');
+        window.classFunction.addClass(mainMenuContainer, 'header__main-menu-container--opened');
+        document.addEventListener('click', window.emptySpaceClick);
+      }
+    };
+
+    burgerButton.addEventListener('click', toggleDropdownMenu);
+
+    // We handle not only a click, but also pressing Enter/Space.
+    burgerButton.addEventListener('keydown', function(event) {
+      if(event.keyCode === Keycode.SPACE || event.keyCode === Keycode.ENTER) {
+        event.preventDefault();
+        toggleDropdownMenu();
+
+        if(burgerButton.getAttribute('aria-expanded') === 'true') {
+          firstLink.focus();
+        } else {
+          burgerButton.focus();
+        }
+      }
+
+      if(event.keyCode === Keycode.ESC && burgerButton.getAttribute('aria-expanded') === 'true') {
+        window.closeDropdownMainMenu();
+      }
+    });
+  }
+})();
+
+(function() {
+  // If there is an anchor link in the menu, clicking on it should close the menu.
+  var mainMenuContainer = document.getElementById('main-menu-container');
+  var mainMenuLinks = mainMenuContainer.getElementsByTagName('a');
+  var windowWidth = window.width();
+
+  for (var i = 0; i < mainMenuLinks.length; i++) {
+      mainMenuLinks[i].onclick = function() {
+          if(window.isMediaQueriesSupported() && windowWidth < Menu.RESPONSIVE_BREAKPOINT) {
+              window.closeDropdownMainMenu();
+          }
+      }
+  }
+})();
+
+(function() {
+  if(document.querySelector && window.isMediaQueriesSupported()) { // This function is only need if there is support for media queries.
+      var burgerButton = document.querySelector('.burger__button');
+      var mainMenuContainer = document.querySelector('.header__main-menu-container');
+      
+      window.closeDropdownMainMenu = function() {
+          burgerButton.setAttribute('aria-expanded', 'false');
+          burgerButton.setAttribute('aria-label', 'Open menu');
+          burgerButton.setAttribute('style', 'background-image: url("data:image/svg+xml;base64,<%- include("../img/buttons/burger-base64.svg.ejs"); %>");');
+          window.classFunction.removeClass(mainMenuContainer, 'header__main-menu-container--opened');
+          document.removeEventListener('click', window.emptySpaceClick);
+      }
+  }
+})();
+
+window.emptySpaceClick = function(){
+  if (event.stopPropagation) {
+      event.stopPropagation();
+      var header = document.querySelector('.header');
+      var burger = document.querySelector('.burger__button');
+      var target = event.target;
+      var isHeader = target == header || header.contains(target);
+      var isBurger = target == burger;
+  
+      if(!isHeader && !isBurger) {
+          window.closeDropdownMainMenu();
+      }
+  }
+};
