@@ -6,7 +6,7 @@ module.exports = {
         "Domain": "/#domain",
         "Technology": "/#tecnology",
         "Services": "/#services",
-        "Blog": "/#blog",
+        "Blog": "https://blog.argonauths.eu",
         "Join us": "/#join-us",
         "Contact": "/#contact"
     },
